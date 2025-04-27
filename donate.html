@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diamond Role Play — Donat</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/stylesheet.css" rel="stylesheet">
+    <link href="css/reset.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery-migrate.min.js"></script>
+
+
+    <script src="https://cdn.jsdelivr.net/gh/polymer/polymer@3.0.0/polymer-element.js"></script>
+</head>
+<body class="news">
+
+<div id="header">
+    <div class="burger-menu" data-toggle="modal" data-target="#burgermainmenu" data-dismiss="modal">
+        <div class="burger-click-region">
+            <span class="burger-menu-piece"></span>
+            <span class="burger-menu-piece"></span>
+            <span class="burger-menu-piece"></span>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-9">
+                <ul class="main-menu">
+                    <li><a href="index.html"><img src="img/logo.png"> Pagina principală</a></li>
+                    <li><a href="about.html"><img src="img/mi-how.svg"> Despre proiect / Acord / Contacte</a></li>
+                    <li><a href="start.html"><img src="img/mi-how.svg"> Cum să începi să joci</a></li>
+                    <li><a href="donate.html"><img src="img/mi-donate.svg"> Donat</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="content" class="content">
+    <div class="container-fluid">
+        <div class="middle-width">
+            <center>
+                <h1 class="textcenter" style="color: #2e4161;text-transform: uppercase">Donație oficială</h1>
+            </center>
+
+            <div class="enterserver-wrap">
+                <h3 class="textcenter" style="color: #fff;text-transform: uppercase">
+                    1 LRP = 1 USD<br/><br/>
+                    Prin achiziționarea de unități de donație, le puteți converti în monedă de joc la bancomatele din joc sau puteți cumpăra conținut de joc.
+                </h3>
+            </div>
+
+            <center>
+                <div class="col-md-7" style="float: none !important">
+                    <div class="iconinput">
+                        <input name="login" id="nickname" type="text" class="main-inp right-ico username" maxlength="16" placeholder="NickName">
+                        <i class="input-ico user-ico"><img src="img/mi-userroom.svg" alt=""></i>
+                    </div>
+
+                    <div class="iconinput">
+                        <input name="rub" id="amount" type="text" class="main-inp right-ico passworde" maxlength="6" placeholder="Suma">
+                        <i class="input-ico pass-ico"><img src="img/credit-cards-payment.svg" alt=""></i>
+                    </div>
+
+                    <input type="button" value="Încărcați-vă contul" id="subdon" class="main-button wide log-in-but">
+                </div>
+            </center>
+
+        </div>
+    </div>
+</div>
+
+
+<script>
+    document.getElementById('subdon').addEventListener('click', function() {
+        var nickname = document.getElementById('nickname').value;
+        var amount = document.getElementById('amount').value;
+
+        if (nickname && amount) {
+
+            var paypalUrl = 'https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=patrasculaur06@gmail.com&item_name=' + encodeURIComponent(nickname) + '&amount=' + encodeURIComponent(amount) + '&currency_code=USD';
+            window.location.href = paypalUrl;
+        } else {
+            alert('Vă rugăm să introduceți un nickname și suma.');
+        }
+    });
+</script>
+
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.toTop.min.js"></script>
+<script src="js/clipboard.min.js"></script>
+<script src="js/script_all.js"></script>
+
+</body>
+</html>
